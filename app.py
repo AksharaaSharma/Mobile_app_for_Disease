@@ -18,167 +18,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS with modern Gen Z aesthetic
-st.markdown("""
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-        
-        /* Main Styles */
-        .main-title {
-            font-size: 72px;
-            font-weight: 800;
-            text-align: center;
-            margin: 50px 0;
-            background: linear-gradient(120deg, #FF78C4, #7B2CBF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -2px;
-            padding: 20px;
-        }
-        
-        .sub-title {
-            color: #2D0040;
-            font-size: 36px;
-            text-align: center;
-            margin: 30px 0;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-        
-        /* Modern Container Styles */
-        .content-container {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        /* Aesthetic Button Styles */
-        .stButton>button {
-            width: 100%;
-            height: 90px;
-            font-size: 26px;
-            font-weight: 600;
-            margin: 15px 0;
-            background: linear-gradient(135deg, #FF78C4, #7B2CBF);
-            color: white;
-            border-radius: 25px;
-            border: none;
-            box-shadow: 0 10px 25px rgba(123, 44, 191, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.5px;
-        }
-        
-        .stButton>button:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(123, 44, 191, 0.4);
-        }
-        
-        .back-button>button {
-            width: 200px !important;
-            height: 60px !important;
-            font-size: 20px !important;
-            background: linear-gradient(135deg, #7B2CBF, #5A189A) !important;
-            margin: 20px 0 40px 0 !important;
-        }
-        
-        /* Modern Quiz Card Styles */
-        .quiz-card {
-            background: white;
-            padding: 35px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.1);
-            margin: 30px 0;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(123, 44, 191, 0.1);
-        }
-        
-        .quiz-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(123, 44, 191, 0.15);
-        }
-        
-        .quiz-question {
-            font-size: 26px;
-            color: #2D0040;
-            margin-bottom: 25px;
-            padding: 25px;
-            background: linear-gradient(to right, #FFE5F1, #F3E8FF);
-            border-radius: 20px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 500;
-        }
-        
-        /* Custom Radio Buttons */
-        div.row-widget.stRadio > div {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(123, 44, 191, 0.1);
-        }
-        
-        .stRadio > label {
-            font-size: 22px;
-            font-weight: 500;
-            color: #2D0040;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        /* Result Card Styling */
-        .result-card {
-            background: linear-gradient(135deg, #FFE5F1, #F3E8FF);
-            padding: 40px;
-            border-radius: 30px;
-            margin-top: 30px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(123, 44, 191, 0.15);
-            border: 1px solid rgba(123, 44, 191, 0.1);
-        }
-        
-        /* Progress Bar Styling */
-        .stProgress > div > div {
-            background-color: #FF78C4;
-        }
-        
-        .stProgress {
-            height: 20px;
-        }
-        
-        /* Hide Streamlit Elements */
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        
-        /* Background Gradient */
-        .stApp {
-            background: linear-gradient(135deg, #FFE5F1 0%, #F3E8FF 100%);
-        }
-        
-        /* Emoji Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating-emoji {
-            animation: float 3s ease-in-out infinite;
-            display: inline-block;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-# Quiz questions remain the same
+# Quiz questions
 quiz_questions = [
     {
         "question": "Do your eyes feel itchy and irritated? ✨",
@@ -221,7 +61,172 @@ quiz_questions = [
         "type": "both"
     }
 ]
-
+# Only apply custom CSS on home and quiz pages
+if st.session_state.page in ['home', 'quiz']:
+    st.markdown("""
+        <style>
+            /* Override background for homepage */
+            [data-testid="stAppViewContainer"] {
+                background-color: """ + ('#FAF9F6' if st.session_state.page == 'home' else '#FFFFFF') + """ !important;
+            }
+            
+            /* Set background for quiz page */
+            .main-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #FFFFFF;
+                z-index: -1;
+                display: """ + ('none' if st.session_state.page == 'home' else 'block') + """;
+            }
+            
+            @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+            
+            .main-title {
+                font-size: 72px;
+                font-weight: 800;
+                text-align: center;
+                margin: 50px 0;
+                background: linear-gradient(120deg, #FF78C4, #7B2CBF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+                font-family: 'Space Grotesk', sans-serif;
+                letter-spacing: -2px;
+                padding: 20px;
+            }
+            
+            .sub-title {
+                color: #2D0040;
+                font-size: 36px;
+                text-align: center;
+                margin: 30px 0;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 700;
+                letter-spacing: -1px;
+            }
+            
+            .content-container {
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 30px;
+                margin: 20px 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .stButton>button {
+                width: 100%;
+                height: 90px;
+                font-size: 26px;
+                font-weight: 600;
+                margin: 15px 0;
+                background: linear-gradient(135deg, #FF78C4, #7B2CBF);
+                color: white;
+                border-radius: 25px;
+                border: none;
+                box-shadow: 0 10px 25px rgba(123, 44, 191, 0.3);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                font-family: 'Space Grotesk', sans-serif;
+                letter-spacing: -0.5px;
+            }
+            
+            .stButton>button:hover {
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 15px 35px rgba(123, 44, 191, 0.4);
+            }
+            
+            .back-button>button {
+                width: 200px !important;
+                height: 60px !important;
+                font-size: 20px !important;
+                background: linear-gradient(135deg, #7B2CBF, #5A189A) !important;
+                margin: 20px 0 40px 0 !important;
+            }
+            
+            .quiz-card {
+                background: white;
+                padding: 35px;
+                border-radius: 30px;
+                box-shadow: 0 10px 30px rgba(123, 44, 191, 0.1);
+                margin: 30px 0;
+                transition: transform 0.3s ease;
+                border: 1px solid rgba(123, 44, 191, 0.1);
+            }
+            
+            .quiz-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(123, 44, 191, 0.15);
+            }
+            
+            .quiz-question {
+                font-size: 26px;
+                color: #2D0040;
+                margin-bottom: 25px;
+                padding: 25px;
+                background: linear-gradient(to right, #FFE5F1, #F3E8FF);
+                border-radius: 20px;
+                font-family: 'Space Grotesk', sans-serif;
+                font-weight: 500;
+            }
+            
+            div.row-widget.stRadio > div {
+                background: white;
+                padding: 15px;
+                border-radius: 15px;
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                box-shadow: 0 5px 15px rgba(123, 44, 191, 0.1);
+            }
+            
+            .stRadio > label {
+                font-size: 22px;
+                font-weight: 500;
+                color: #2D0040;
+                font-family: 'Space Grotesk', sans-serif;
+            }
+            
+            .result-card {
+                background: linear-gradient(135deg, #FFE5F1, #F3E8FF);
+                padding: 40px;
+                border-radius: 30px;
+                margin-top: 30px;
+                text-align: center;
+                box-shadow: 0 15px 35px rgba(123, 44, 191, 0.15);
+                border: 1px solid rgba(123, 44, 191, 0.1);
+            }
+            
+            .stProgress > div > div {
+                background-color: #FF78C4;
+            }
+            
+            .stProgress {
+                height: 20px;
+            }
+            
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            .floating-emoji {
+                animation: float 3s ease-in-out infinite;
+                display: inline-block;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    # Add background div only for quiz page
+    if st.session_state.page == 'quiz':
+        st.markdown('<div class="main-background"></div>', unsafe_allow_html=True)
 def calculate_result():
     cataract_score = 0
     conjunctivitis_score = 0
@@ -301,7 +306,6 @@ def quiz_page():
                         </div>
                     """, unsafe_allow_html=True)
                 st.markdown('</div>', unsafe_allow_html=True)
-
 # Main page content
 if st.session_state.page == 'home':
     st.markdown('<h1 class="main-title">👁️ Eye Disease Detection</h1>', unsafe_allow_html=True)
@@ -355,7 +359,7 @@ elif st.session_state.page == "cataract_detect":
     st.markdown('</div>', unsafe_allow_html=True)
     
     # Load cataract detection page
-    exec(open(r"C:\Users\Nitya\Downloads\Eye Disease Detection\Cataract App.py", encoding="utf-8").read())
+    exec(open(r"C:\Users\Nitya\Downloads\Eye Disease Detection\cataract.py", encoding="utf-8").read())
 
 elif st.session_state.page == "conjunctivitis_detect":
     # Back button
@@ -366,4 +370,4 @@ elif st.session_state.page == "conjunctivitis_detect":
     st.markdown('</div>', unsafe_allow_html=True)
     
     # Load conjunctivitis detection page
-    exec(open(r"C:\Users\Nitya\Downloads\Eye Disease Detection\aksharatry1.py", encoding="utf-8").read())
+    exec(open(r"C:\Users\Nitya\Downloads\Eye Disease Detection\try.py", encoding="utf-8").read())
