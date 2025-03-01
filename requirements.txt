@@ -1,0 +1,11 @@
+streamlit
+streamlit-extras
+torch
+torchvision
+opencv-python-headless
+numpy
+pillow
+datetime
+fpdf
+reportlab
+tensorflow
