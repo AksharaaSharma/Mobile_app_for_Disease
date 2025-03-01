@@ -11,7 +11,7 @@
 
 ### AI-Powered Optical Health Analysis & Early Detection System
 
-[**📱 Download Android App**]([https://eyecare-ai.com/download/app](https://expo.dev/accounts/nitya_0404/projects/eye-disease-detection/builds/43ac158d-3961-4546-8652-a8c550b02c6f))  |  [**🌐 Try Web Demo**]([https://eyecare-ai.streamlit.app](https://eye-disease-detection-ngr5m2aoa65bavsuqdweoq.streamlit.app/))  |  [**📚 Documentation**](https://eyecare-ai.com/docs)
+[**📱 Download Android App**]([https://eyecare-ai.com/download/app](https://expo.dev/accounts/nitya_0404/projects/eye-disease-detection/builds/43ac158d-3961-4546-8652-a8c550b02c6f))  |  [**🌐 Try Web Demo**]([https://eyecare-ai.streamlit.app](https://eye-disease-detection-ngr5m2aoa65bavsuqdweoq.streamlit.app/)  |  [**📚 Documentation**](https://eyecare-ai.com/docs)
 
 </div>
 
