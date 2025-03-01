@@ -40,7 +40,7 @@
 | Component | Technologies |
 |-----------|-------------|
 | **Frontend** | Streamlit with custom CSS styling for a modern, responsive interface |
-| **Deep Learning** | OcularVisionFormer-XL, RetinalBERT-Large, MedicalVIT-L/16, OphthalmicGPT-3.5, OcuVision-7000 |
+| **Deep Learning** | EfficientNetV2B0, RetinalBERT-Large, MedicalVIT-L/16, Vision Transformer (ViT), OcuVision-7000 |
 | **Computer Vision** | OpenCV for real-time eye detection and image quality analysis |
 | **Report Generation** | ReportLab for professional medical report creation |
 | **Deployment** | Streamlit Cloud, Google Play Store, AWS |
