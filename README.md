@@ -47,12 +47,8 @@
 
 </div>
 
-## 🔬 Our Models
-
-- **OcularVisionFormer-XL**: Transformer-based architecture pre-trained on 12M ophthalmological images
-- **RetinalBERT-Large**: Bidirectional encoder with specialized ocular disease detection capabilities 
-- **MedicalVIT-L/16**: Vision Transformer model fine-tuned exclusively for eye disease recognition
-- **OcuVision-7000**: Specialized CNN designed for ophthalmic image analysis, trained on 50,000+ eye images
+**Ensemble Architecture**
+Our system uses a dual-backbone approach combining EfficientNetV2B0 and MobileNetV2 with additional custom layers for optimal performance.
 
 ## 🚀 Installation & Setup
 
