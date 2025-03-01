@@ -150,7 +150,6 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 For technical issues or support:
 - Email: support@ocuscan-ai.org
 - Research Contact: akshara.sharma2@s.amity.edu, nitya.pillai@s.amity.edu
-- Phone: +91 (971) 719-4402
 
 ## 📜 License
 
@@ -158,7 +157,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgements
 
-- The ophthalmology department at Amity University for clinical guidance and validation
+- The engineering department at Amity University for clinical guidance and validation
 - TensorFlow and PyTorch communities for deep learning frameworks
 - Streamlit team for the interactive web application framework
 - Open-source medical imaging community for sharing knowledge and best practices
