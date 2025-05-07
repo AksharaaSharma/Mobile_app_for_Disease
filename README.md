@@ -1,4 +1,4 @@
-# 👁️ EyeCare AI - Advanced Eye Disease Detection System
+<h1 align="center"> 👁️ EyeCare AI - Advanced Eye Disease Detection System </h1>
 
 <div align="center">
 
@@ -113,8 +113,6 @@ Our Android application offers the same functionality as the web version with ad
 - Secure local storage of reports
 - Reminder system for follow-up checks
 
-[**Download from Google Play**](https://eyecare-ai.com/download/app)
-
 ## 🛠️ Development
 
 ### Prerequisites
@@ -142,8 +140,7 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 ## 📞 Support
 
 For technical issues or support:
-- Email: support@eyecare-ai.com
-- [Join our Discord community](https://discord.gg/eyecare-ai)
+- Email: akshara.sharma.contact@gmail.com
 
 ## 📜 License
 
